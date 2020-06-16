@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dingx.personal.dao.sys.SysUserMapper">
+    <insert id="saveBaseUser">
+        insert into sys_user_base(
+            id,
+            <if test="userBase.pwd != null and userBase.pwd.trim() != ''">
+                pwd,
+            </if>
+            <if test="userBase.account != null and userBase.account.trim() != ''">
+                account,
+            </if>
+            <if test="userBase.phone != null and userBase.phone.trim() != ''">
+                phone,
+            </if>
+            <if test="userBase.state != null">
+                state,
+            </if>
+            <if test="userBase.isAdmin != null">
+                is_admin,
+            </if>
+            <if test="userBase.name != null and userBase.name.trim() != ''">
+                name,
+            </if>
+            <if test="userBase.createDate != null">
+                create_date,
+            </if>
+            <if test="userBase.removed != null">
+                removed
+            </if>
+        )
+        values (
+            #{userBase.id},
+            <if test="userBase.pwd != null and userBase.pwd.trim() != ''">
+                #{userBase.pwd},
+            </if>
+            <if test="userBase.account != null and userBase.account.trim() != ''">
+                #{userBase.account},
+            </if>
+            <if test="userBase.phone != null and userBase.phone.trim() != ''">
+                #{userBase.phone},
+            </if>
+            <if test="userBase.state != null">
+                #{userBase.state},
+            </if>
+            <if test="userBase.isAdmin != null">
+                #{userBase.isAdmin},
+            </if>
+            <if test="userBase.name != null and userBase.name.trim() != ''">
+                #{userBase.name},
+            </if>
+            <if test="userBase.createDate != null">
+                #{userBase.createDate},
+            </if>
+            <if test="userBase.removed != null">
+                #{userBase.removed}
+            </if>
+        )
+    </insert>
+
+    <select id="checkOpenid" resultType="java.lang.Integer">
+        select count(0) from sys_user
+        where removed = 0 and openid = #{openid}
+    </select>
+</mapper>

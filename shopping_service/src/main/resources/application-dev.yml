@@ -1,0 +1,39 @@
+server:
+    port: 8890
+
+spring:
+    #mysql
+    datasource:
+        max-idle: 10
+        min-idle: 5
+        initial-size: 5
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        max-wait: 10000
+        url: jdbc:p6spy:mysql://127.0.0.1:3306/shopping_wx?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+        validation-interval: 30000
+        username: root
+        password: root
+        default-transaction-isolation: 2
+
+#swagger
+swagger:
+    enabled: true
+
+wx:
+    api:
+        appid: 12345
+        secret: secret
+        loginUrl: https://api.weixin.qq.com/sns/jscode2session
+
+kisso:
+    config:
+        #访问票据名
+        accessTokenName: wx-auth-token
+        #cookie 名称
+        cookieName: wx-dingx-uid
+
+#token失效时间
+token:
+    timeout: 86400
+
+
