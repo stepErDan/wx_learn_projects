@@ -1,10 +1,19 @@
 //app.js
+var config = require("./config.js");
+var login = require("./utils/login.js");
+
 App({
+  host : config.host,
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    // 获取token
+    var token = wx.getStorageSync('token');
+    //判断token是否为空，若token为空，进行登录
+    if(token == ''){
+      login.login;
+    }
+
+    // 获取用户信息
+    var userInfo = wx.getStorageSync('userInfo');
 
     // 登录
     wx.login({
