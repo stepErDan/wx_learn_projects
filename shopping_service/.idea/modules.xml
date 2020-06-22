@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/shopping_service.iml" filepath="$PROJECT_DIR$/.idea/shopping_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopping.iml" filepath="$PROJECT_DIR$/shopping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopping_wx.iml" filepath="$PROJECT_DIR$/shopping_wx.iml" />
     </modules>
   </component>
 </project>
