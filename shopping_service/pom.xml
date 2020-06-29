@@ -21,7 +21,7 @@
     </properties>
 
     <repositories>
-        <!--阿里云仓库 -->
+        <!--阿里云仓库 -->getTokenByCode
         <repository>
             <id>alimaven</id>
             <name>aliyun maven</name>
