@@ -3,3 +3,4 @@ shopping_service/.idea/
 shopping_service/LogBack/
 shopping_service/target/
 shopping_wx/node_modules/
+shopping_wx/miniprogram_npm/
