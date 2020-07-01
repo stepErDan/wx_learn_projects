@@ -40,5 +40,10 @@
     }]
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-popup": "vant-weapp/dist/popup/index",
+    "van-cell": "vant-weapp/dist/cell/index",
+    "van-cell-group": "vant-weapp/dist/cell-group/index"
+  }
 }
