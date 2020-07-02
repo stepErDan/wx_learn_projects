@@ -1,49 +1,56 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/category/index",
     "pages/cart/index",
     "pages/person/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/template/swiper/swiper"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#eee",
     "navigationBarTitleText": "shopping",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#6e6d6b",
     "selectedColor": "#e64340",
     "borderStyle": "white",
     "backgroundColor": "#fff",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "iconPath": "images/nav/home-off.png",
-      "selectedIconPath": "images/nav/home-on.png",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/category/index",
-      "text": "分类",
-      "iconPath" : "images/nav/ic_catefory_normal.png",
-      "selectedIconPath" : "images/nav/ic_catefory_pressed.png"
-    }, {
-      "pagePath": "pages/cart/index",
-      "text": "购物车",
-      "iconPath" : "images/nav/cart-off.png",
-      "selectedIconPath" : "images/nav/cart-on.png"
-    }, {
-      "pagePath": "pages/person/index",
-      "text": "我的",
-      "iconPath" : "images/nav/my-off.png",
-      "selectedIconPath" : "images/nav/my-on.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "images/nav/ic_catefory_normal.png",
+        "selectedIconPath": "images/nav/ic_catefory_pressed.png"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "text": "购物车",
+        "iconPath": "images/nav/cart-off.png",
+        "selectedIconPath": "images/nav/cart-on.png"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "text": "我的",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "van-popup": "vant-weapp/dist/popup/index",
     "van-cell": "vant-weapp/dist/cell/index",
-    "van-cell-group": "vant-weapp/dist/cell-group/index"
+    "van-cell-group": "vant-weapp/dist/cell-group/index",
+    "van-search": "vant-weapp/dist/search/index"
   }
 }

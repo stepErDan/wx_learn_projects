@@ -6,6 +6,7 @@ var login = require("../../utils/login.js");
 Page({
   data: {
     show: false,
+    value:"",
   },
   onLoad: function () {
     wx.getSetting({
@@ -23,7 +24,17 @@ Page({
   login:function(){
     this.setData({ show : false });
     loginAuth();
-  }
+  },
+  onSearch:function(){
+
+  },
+  onCancel:function(){},
+  onShareAppMessage() {
+    return {
+      title: 'swiper',
+      path: 'page/component/pages/swiper/swiper'
+    }
+  },
 })
 function loginAuth(){
   // 获取token

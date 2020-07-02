@@ -1,3 +1,4 @@
+<import src="../template/swiper/swiper.wxml"/>
 <!--index.wxml-->
 <view class="container">
   <view class="popup">
@@ -10,5 +11,23 @@
       </view>
     </van-popup>
   </view>
-  <view></view>
+  <view class="index">
+    <!-- 头部搜索框 -->
+    <view class="head-search">
+      <van-search
+        value="{{ value }}"
+        placeholder="请输入搜索关键词"
+        use-action-slot
+        bind:change="onChange"
+        bind:search="onSearch"
+      >
+        <view slot="action" bind:tap="onClick">搜索</view>
+      </van-search>
+    </view>
+    <!-- 轮播图 -->
+    <view class="head-swiper">
+      <include src="../template/swiper/swiper.wxml"/>
+      <template is="tmp_swiper"/>
+    </view>
+  </view>
 </view>
