@@ -1,9 +1,7 @@
 const config = require("../config.js")
 var host = config.host;
 
-module.exports = {
-  login : login()
-}
+module.exports.login = login;
 
 /**
  * 登录方法
@@ -12,7 +10,6 @@ function login(){
     // 登录
     wx.login({
       success: res => {
-        console.log(res);
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
           url: host + '/rest/login/getTokenByCode',
@@ -24,11 +21,12 @@ function login(){
             var userInfo = res2.data.data;
             //若用户信息为空，先行注册。
             if(userInfo == null){
-              console.log(1);
-              registe();
+              registe(openId);
             }else{
-              wx.setStorage('userInfo', userInfo);
+              wx.setStorageSync('userInfo', userInfo);
             }
+            //再调用获得token
+            getTokenByOpenid(openId);
           }
         })
       }
@@ -38,27 +36,38 @@ function login(){
  * 根据openid获取token
  * @param {*} openId 
  */
-function getTokenByOpenid(openId){
-
+function getTokenByOpenid(){
+  wx.request({
+    url: host + '/rest/login/getTokenByUser',
+    method : "POST",
+    data : wx.getStorageSync('userInfo'),
+    success : res2 => {
+      wx.setStorageSync('token', res2.data.data);
+    }
+  })
 }
 /**
  * 注册用户
  * @param {*} openId 
  */
-function registe(){
+function registe(openId){
   // 获取用户信息
-  wx.getSetting({
+  // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+  wx.getUserInfo({
     success: res => {
-      if(res.authSetting['scope.userInfo']){
-        console.log(2);
-        // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-        wx.getUserInfo({
-          success: res => {
-            console.log(res.userInfo);
-            
+      wx.request({
+        url: host + '/rest/login/registe',
+        method : "POST",
+        data : res.userInfo,
+        header: {
+          'wx-openid' : openId
+        },
+        success : res2 => {
+          if(res2.data.code != 200){
+            console.log("registe:err");
           }
-        })
-      }
+        }
+      })
     }
-  })
+  });
 }

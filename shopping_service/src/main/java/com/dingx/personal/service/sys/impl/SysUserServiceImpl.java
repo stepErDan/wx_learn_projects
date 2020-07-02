@@ -49,6 +49,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         //先创建基础用户
         SysUserBase userBase = new SysUserBase();
         userBase.setAccount(sysUser.getOpenid());
+        userBase.setName(sysUser.getNickName());
         int i = baseMapper.saveBaseUser(userBase);
         if(i > 0){
             sysUser.setUid(userBase.getId());

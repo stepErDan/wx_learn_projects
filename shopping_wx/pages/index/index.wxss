@@ -6,7 +6,7 @@
 }
 
 .popup_button button{
-  background-color: green;
+  background-color: rgb(226, 108, 108);
   color:whitesmoke;
   position: absolute;
   top: 0;

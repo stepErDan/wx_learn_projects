@@ -6,7 +6,7 @@
       custom-style="height: 27.3%;"
       bind:close="onClose">
       <view class="popup_button">
-        <button open-type="getUserInfo" >请先授权用户信息</button>
+        <button open-type="getUserInfo"  bindgetuserinfo="login">请先授权用户信息</button>
       </view>
     </van-popup>
   </view>
