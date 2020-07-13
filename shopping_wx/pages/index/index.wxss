@@ -1,8 +1,16 @@
+@import '../../style/wxss/common.wxss';
+@import '../../style/wxss/swiper.wxss';
+
 .popup_button{
   background-color: whitesmoke;
   height: 100%;
   text-align: center;
   position: relative;
+}
+
+.head-swiper{
+  width: 750rpx;
+  height: auto;
 }
 
 .popup_button button{
@@ -16,4 +24,55 @@
   height: 30%;
   width: 50%;
   margin: auto;
+}
+
+.demo-text-1{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #1AAD19;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-1:before{
+  content: 'A';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-2{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #2782D7;
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+.demo-text-2:before{
+  content: 'B';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-text-3{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-color: #F1F1F1;
+  color: #353535;
+  font-size: 36rpx;
+}
+.demo-text-3:before{
+  content: 'C';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.swiper-item{
+  display: block;
+  height: 150px;
 }

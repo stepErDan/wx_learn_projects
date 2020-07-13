@@ -1,0 +1,12 @@
+<template name="tmp_swiper">
+  <view>
+    <swiper indicator-dots="{{swiperCon.indicatorDots}}" indicator-color="{{swiperCon.indicatorColor}}" indicator-active-color="{{swiperCon.indicatorActiveColor}}"
+            autoplay="{{swiperCon.autoplay}}" interval="{{swiperCon.interval}}" duration="{{swiperCon.duration}}" >
+        <block wx:for="{{swiperCon.imgUrls}}" wx:key="*this">
+            <swiper-item>
+                <view class="swiper-item {{item}}"></view>
+            </swiper-item>
+        </block>
+    </swiper>
+  </view>
+</template>

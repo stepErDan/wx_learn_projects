@@ -1,4 +1,4 @@
-<import src="../template/swiper/swiper.wxml"/>
+<import src="../template/swiper.wxml"/>
 <!--index.wxml-->
 <view class="container">
   <view class="popup">
@@ -26,8 +26,7 @@
     </view>
     <!-- 轮播图 -->
     <view class="head-swiper">
-      <include src="../template/swiper/swiper.wxml"/>
-      <template is="tmp_swiper"/>
-    </view>
+      <template is="tmp_swiper" data="{{swiperCon}}"/>
+    </view> 
   </view>
 </view>

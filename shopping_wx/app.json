@@ -4,8 +4,7 @@
     "pages/category/index",
     "pages/cart/index",
     "pages/person/index",
-    "pages/logs/logs",
-    "pages/template/swiper/swiper"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
